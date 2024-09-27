@@ -23,19 +23,21 @@
         const container = document.getElementById("container")
         for (let count in arr) {
             const row = document.createElement("div")
-            row.
+            row.style.display = "flex";
+            row.style.justifyContent = "center";
+            row.style.width = "700px"
             for (let i = 0; i < count; i++) {
                 row.appendChild(getCircle())
             }
-            container.appendChild(row)
+            container.appendChild(row);
         }
         const getCircle = () => {
             const circle = document.createElement("div")
             circle.style.width = "70px";
             circle.style.height = "70px";
             circle.style.borderRadius = "50%";
-            circle.style.backgroundColor = "#e7b358"
-            circle.style.margin = "10px"
+            circle.style.backgroundColor = "#e7b358";
+            circle.style.margin = "15px";
         }
     </script>
 </body>
