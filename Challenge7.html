@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        const arr = [
+            [0, 0, 0, 0, 0, 1, 0, 0],
+            [0, 0, 0, 0, 1, 1, 0, 0],
+            [0, 2, 2, 0, 1, 0, 0, 0],
+            [0, 2, 2, 1 ,0, 3, 0, 0],
+            [0, 1, 1, 1, 4, 3, 3, 0],
+            [0, 2, 4 ,4, 4, 3, 4, 0]
+        ]
+        const container = document.getElementById("container")
+        for (let i = 0; i < 6; i++) {
+            const row = document.createElement("div");
+            row.style.display = "flex";
+            for (let j = 0; j < 8; j++) {
+                row.appendChild(getBox(arr[i][j]))
+            }
+            container.appendChild(row)
+        }
+        const getBox = (num) => {
+            const box = document.createElement("div");
+            box.style.width = "50px";
+            box.style.height = "50px";
+            box.style.margin = "5px";
+            box.style.backgroundColor = getColour(num);
+        }
+        const getColour = (num) => {
+            switch (num) {
+                case 0:
+                    return "blue";
+                case 1:
+                    return  "red";
+                case 2:
+                    return "yellow";
+                case 3:
+                    return "violet";
+                case 4:
+                    return "#81dee8";
+                default:
+                    return "";
+            }
+        }
+    </script>
+</body>
+</html>
